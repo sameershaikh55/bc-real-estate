@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.4s;
+}
+
+// VARIABLES START
+$color1: #283046;
+$color2: #f4f0ec;
+$color3: #313d5f;
+$color4: #f0e8de;
+$color5: #181a26;
+$color6: #eae6e1;
+$color7: #c3baaf;
+$color8: #d0d2d6;
+$color9: #161d31;
+// VARIABLES END
+
+// GLOBAL START
+html {
+  width: 100%;
+  font-size: 100%;
+}
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media screen and (max-width: 668px) {
+  html {
+    font-size: 95%;
+  }
+}
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 475px) {
+  html {
+    font-size: 85%;
+  }
+}
+@media screen and (max-width: 380px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 280px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+.f8 {
+  font-size: 0.5rem;
+}
+
+.f10 {
+  font-size: 0.625rem;
+}
+
+.f12 {
+  font-size: 0.75rem;
+}
+
+.f14 {
+  font-size: 0.875rem;
+}
+
+.f15 {
+  font-size: 0.938rem;
+}
+
+.f16 {
+  font-size: 1rem;
+}
+
+.f18 {
+  font-size: 1.125rem;
+}
+
+.f20 {
+  font-size: 1.25rem;
+}
+
+.f22 {
+  font-size: 1.375rem;
+}
+
+.f24 {
+  font-size: 1.5rem;
+}
+
+.f34 {
+  font-size: 2.125rem;
+}
+
+.f30 {
+  font-size: 1.875rem;
+}
+
+.f35 {
+  font-size: 2.125rem;
+  line-height: 57px;
+}
+
+.f50 {
+  font-size: 3.125rem;
+  line-height: 65px;
+}
+
+.f64 {
+  font-size: 4rem;
+  line-height: 71px;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+.fw800 {
+  font-weight: 800;
+}
+
+.fw900 {
+  font-weight: 900;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// COLORS
+.color1 {
+  color: $color1;
+
+  &:hover {
+    color: $color1;
+  }
+}
+
+.bg_color1 {
+  background: $color1;
+}
+
+.color2 {
+  color: $color2;
+
+  &:hover {
+    color: $color2;
+  }
+}
+
+.bg_color2 {
+  background: $color2;
+}
+
+.color3 {
+  color: $color3;
+
+  &:hover {
+    color: $color3;
+  }
+}
+
+.bg_color3 {
+  background: $color3;
+}
+
+.color4 {
+  color: $color4;
+
+  &:hover {
+    color: $color4;
+  }
+}
+
+.bg_color4 {
+  background: $color4;
+}
+
+.color5 {
+  color: $color5;
+
+  &:hover {
+    color: $color5;
+  }
+}
+
+.bg_color5 {
+  background: $color5;
+}
+
+.color6 {
+  color: $color6;
+
+  &:hover {
+    color: $color6;
+  }
+}
+
+.bg_color6 {
+  background: $color6;
+}
+
+.color7 {
+  color: $color7;
+
+  &:hover {
+    color: $color7;
+  }
+}
+
+.bg_color7 {
+  background: $color7;
+}
+
+.color8 {
+  color: $color8;
+
+  &:hover {
+    color: $color8;
+  }
+}
+
+.bg_color8 {
+  background: $color8;
+}
+
+.color9 {
+  color: $color9;
+
+  &:hover {
+    color: $color9;
+  }
+}
+
+.bg_color9 {
+  background: $color9;
+}
