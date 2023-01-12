@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+
+// COMPONENTS
+import Layout from "../layout";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <Layout>
+      <Hero />
+    </Layout>
+  );
+};
 
-export default Home
+export default Home;
