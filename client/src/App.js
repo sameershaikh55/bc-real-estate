@@ -6,6 +6,10 @@ import store from "./redux/store";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.scss";
 
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 // ROUTES
 import AppRoutes from "./Routes";
 

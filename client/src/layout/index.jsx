@@ -3,6 +3,8 @@ import React from "react";
 // COMPONENTS
 import TopHeader from "./components/TopHeader";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Newsletter from "../components/Newsletter";
 
 const Layout = ({ children }) => {
   return (
@@ -12,6 +14,8 @@ const Layout = ({ children }) => {
         <Header />
       </div>
       {children}
+      <Newsletter />
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Home",
+    "link": "/"
+  },
+  {
+    "label": "Properties",
+    "link": "/homes"
+  },
+  {
+    "label": "Our agents",
+    "link": "/agents"
+  },
+  {
+    "label": "Contact",
+    "link": "/contact"
+  }
+]

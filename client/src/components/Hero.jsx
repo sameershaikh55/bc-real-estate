@@ -74,7 +74,7 @@ const Hero = () => {
               Real Estate Agency
             </h6>
             <Title>
-              Find Your Dream <br /> House By Us
+              Find Your <span className="color1">Dream</span> <br /> House By Us
             </Title>
             <Subtitle>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
