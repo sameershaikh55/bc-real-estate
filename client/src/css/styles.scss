@@ -789,6 +789,7 @@ p {
 // NEWSLETTER START
 .newsletter_container {
   position: relative;
+  margin-top: -11rem;
 
   &::after {
     content: "";
@@ -822,7 +823,8 @@ p {
 
     &:focus {
       outline: none;
-      box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+      border-color: #ff5a3c66; /* set your desired border color */
+      box-shadow: 0 0 0 0.2rem #ff593c27; /* set your desired box-shadow color */
     }
   }
 
@@ -1098,3 +1100,194 @@ p {
   }
 }
 // FEATURED SLIDER END
+
+// CONTACT START
+.contact_container {
+  padding-bottom: 5rem;
+
+  .info-wrap {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+
+  .info {
+    background: #fff;
+  }
+
+  .info .icon {
+    font-size: 20px;
+    color: #f03c02;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #ffeee8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+
+    * {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2b2320;
+  }
+
+  .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #65534c;
+  }
+
+  .info:hover .icon {
+    background: #f03c02;
+
+    .i {
+      color: #fff;
+    }
+  }
+
+  .checkbox__wrapper {
+    legend {
+      display: table;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      + * {
+        clear: both;
+      }
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0.01em 0 0 0;
+      margin: 0;
+      min-width: 0;
+    }
+
+    body:not(:-moz-handler-blocked) fieldset {
+      display: table-cell;
+    }
+
+    // Variables
+    $neutral-200: #6675a3;
+    $neutral-700: #ff5a3c66;
+    $neutral-800: #ff593c27;
+    $neutral-900: #ff593c0a;
+    $primary: #ff5a3c;
+    $white: #fff;
+    $radius: 0.25rem;
+
+    // Styles
+    .form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: $neutral-200;
+      background-color: $neutral-900;
+      line-height: 1.5;
+    }
+
+    .field {
+      background: linear-gradient(150deg, $neutral-900, rgba(255, 255, 255, 0));
+      box-shadow: -10px -10px 20px 10px rgba(255, 255, 255, 0.3),
+        10px 10px 20px 0px #c5cbe180;
+      padding: 2rem;
+      border-radius: $radius;
+
+      > * {
+        margin-bottom: 1.25rem;
+      }
+
+      &__label {
+        font-weight: 400;
+        font-size: 1.25rem;
+      }
+    }
+
+    .checkbox {
+      font-weight: 300;
+      line-height: 1;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      gap: 1rem;
+
+      &__wrapper {
+        > * {
+          margin-bottom: 1.25rem;
+        }
+      }
+
+      &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked + .checkbox__check .checkbox__svg {
+          path {
+            stroke: $primary;
+            stroke-width: 1.5px;
+            animation: dash 2s ease-out forwards;
+          }
+          box-shadow: inset 1px 1px 2px 0 $neutral-700;
+          border: 1px solid $primary;
+        }
+      }
+
+      &__svg {
+        overflow: visible;
+        padding: 0.25rem;
+        height: 21px;
+        width: 21px;
+        border-radius: 0.125rem;
+        transform: scale(1.5);
+        background: linear-gradient(145deg, $neutral-800, $neutral-900);
+        box-shadow: 4px 4px 8px 0 #c5cbe180,
+          -4px -4px 8px rgba(255, 255, 255, 0.5);
+        border: 1px solid $neutral-700;
+
+        path {
+          stroke: transparent;
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
+        }
+      }
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+  .form-control:focus {
+    border-color: #ff5a3c66; /* set your desired border color */
+    box-shadow: 0 0 0 0.2rem #ff593c27; /* set your desired box-shadow color */
+  }
+}
+// CONTACT END
+
+// LOCATION START
+.location_container {
+  // padding-bottom: 5rem;
+}
+// LOCATION END

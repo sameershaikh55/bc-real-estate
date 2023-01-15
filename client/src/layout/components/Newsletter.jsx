@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "./Input";
-import STtitle from "./STtitle";
+import Input from "../../components/Input";
+import STtitle from "../../components/STtitle";
 import { TfiEmail } from "react-icons/tfi";
 import { HiOutlineQrCode } from "react-icons/hi2";
 import { MdLocationCity } from "react-icons/md";

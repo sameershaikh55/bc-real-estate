@@ -1,8 +1,8 @@
 import React from "react";
 
-const Input = ({ label, icon, type, value, name, onChange }) => {
+const Input = ({ label, icon, type, value, name, onChange, className }) => {
   return (
-    <label className="custom-field">
+    <label className={`custom-field ${className}`}>
       {icon && <div className="icon">{icon}</div>}
       <input
         type={type}

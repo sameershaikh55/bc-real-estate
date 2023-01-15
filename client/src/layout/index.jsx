@@ -4,7 +4,8 @@ import React from "react";
 import TopHeader from "./components/TopHeader";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Newsletter from "../components/Newsletter";
+import Newsletter from "./components/Newsletter";
+import Location from "./components/Location";
 
 const Layout = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         <Header />
       </div>
       {children}
+      <Location />
       <Newsletter />
       <Footer />
     </>
