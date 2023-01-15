@@ -12,8 +12,8 @@ const Home = () => {
     <Layout>
       <Hero />
       <Featured />
-      <Agents />
       <FeaturedSlider />
+      <Agents />
     </Layout>
   );
 };
