@@ -69,7 +69,7 @@ const Hero = () => {
       >
         <Overlay>
           <Wrapper>
-            <h6 class="text-white mb-3 d-flex align-items-center gap-2">
+            <h6 className="text-white mb-3 d-flex align-items-center gap-2">
               <BsHouseFill className="mb-1" />
               Real Estate Agency
             </h6>
@@ -85,9 +85,10 @@ const Hero = () => {
           </Wrapper>
         </Overlay>
 
-        {sliderImages.map((content) => {
+        {sliderImages.map((content, i) => {
           return (
             <Slide
+              key={i}
               shouldRenderMask
               label={content.label}
               background={{

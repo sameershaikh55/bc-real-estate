@@ -6,8 +6,8 @@ import { TbBath } from "react-icons/tb";
 
 const PropertyCard = () => {
   return (
-    <div class="property_card">
-      <div class="product-img">
+    <div className="property_card">
+      <div className="product-img">
         <div className="hover15 column">
           <div>
             <figure>
@@ -15,17 +15,17 @@ const PropertyCard = () => {
             </figure>
           </div>
         </div>
-        <div class="product-badge">
+        <div className="product-badge">
           <ul className="list-unstyled">
-            <li class="sale-badge bg-green">For Sale</li>
+            <li className="sale-badge bg-green">For Sale</li>
           </ul>
         </div>
-        <div class="product-img-location-gallery">
-          <div class="product-img-location">
+        <div className="product-img-location-gallery">
+          <div className="product-img-location">
             <ul className="list-unstyled">
               <li className="f14">
                 <a className="f14" href="">
-                  <IoLocationSharp class="icon" fontSize={18} /> Belmont
+                  <IoLocationSharp className="icon" fontSize={18} /> Belmont
                   Gardens, Chicago
                 </a>
               </li>
@@ -33,23 +33,23 @@ const PropertyCard = () => {
           </div>
         </div>
       </div>
-      <div class="product-info">
-        <div class="product-price">
+      <div className="product-info">
+        <div className="product-price">
           <span>$34,900</span>
         </div>
-        <h2 class="product-title">
+        <h2 className="product-title">
           <a href="">New Apartment Nice View</a>
         </h2>
-        <div class="product-description">
+        <div className="product-description">
           <p>
             Beautiful Huge 1 Family House In Heart Of <br />
             Westbury. Newly Renovated With New Wood
           </p>
         </div>
-        <ul class="list-unstyled ltn__list-item-2 ltn__list-item-2-before">
+        <ul className="list-unstyled ltn__list-item-2 ltn__list-item-2-before">
           <li>
             <span>
-              3 <BiBed color="#5c727d" />
+              3 <BiBed color="#5c727d" /> 
             </span>
             Bedrooms
           </li>

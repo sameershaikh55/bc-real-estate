@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="footer_container">
       <div className="page_container">
         <div className="container-fluid">
-          <div className="row gx-5">
+          <div className="row gx-4">
             <div className="col-4">
               <Logo />
               <br />
