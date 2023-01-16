@@ -1,28 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../../components/Logo";
+import navlinks from "../navlinks/index.json";
 
 const Header = () => {
   const location = useLocation();
 
-  const navlinks = [
-    {
-      label: "Home",
-      link: "/",
-    },
-    {
-      label: "Properties",
-      link: "/homes",
-    },
-    {
-      label: "Our agents",
-      link: "/agents",
-    },
-    {
-      label: "Contact",
-      link: "/contact",
-    },
-  ];
+  useEffect(() => {
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector(".navbar_container");
+      if (header !== null) {
+        header.classList.toggle("sticky", window.scrollY > 0);
+        header.classList.toggle("shadow-sm", window.scrollY > 0);
+      }
+    });
+  }, []);
 
   return (
     <div className="navbar_container">
@@ -37,7 +29,7 @@ const Header = () => {
                     <Link
                       className={`f15 text-decoration-none ${
                         (location.pathname === content.link && "active") ||
-                        "text-white"
+                        "navlink"
                       }`}
                       to={content.link}
                     >

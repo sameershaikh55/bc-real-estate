@@ -27,7 +27,7 @@ const Newsletter = () => {
       icon: <MdLocationCity fontSize={22} />,
     },
     {
-      label: "Address",
+      label: "Address (optional)",
       type: "text",
       name: "address",
       icon: <GrMapLocation fontSize={21} />,

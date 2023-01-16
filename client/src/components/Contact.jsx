@@ -19,7 +19,7 @@ const Contact = () => {
       name: "email",
     },
     {
-      label: "Phone",
+      label: "Phone (optional)",
       type: "text",
       name: "phone",
     },
