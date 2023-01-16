@@ -6,7 +6,7 @@ import { BsPhone } from "react-icons/bs";
 import Button from "./Button";
 import Input from "../components/Input";
 
-const Contact = () => {
+const Contact = ({ page }) => {
   const fields = [
     {
       label: "Name",
@@ -26,10 +26,11 @@ const Contact = () => {
   ];
 
   return (
-    <div className="contact_container">
+    <div className={`contact_container ${page && "pt-5"}`}>
+      {page && <br />}
       <div className="page_container">
         <div className="container-fluid">
-          <STtitle>Contact Us</STtitle>
+          {!page && <STtitle>Contact Us</STtitle>}
 
           <div className="row justify-content-center">
             <div className="col-lg-10">

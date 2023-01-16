@@ -15,7 +15,10 @@ const Footer = () => {
         <div className="container-fluid">
           <div className="row gx-4">
             <div className="col-4">
-              <Logo />
+              <h1 className="logo d-flex align-items-center">
+                <span className="lobster display-4 color1 fw700">BC</span>
+                <span className="f14 text-white">Real State Team</span>
+              </h1>
               <br />
               <p className="text-white opacity-75 f14 lh-lg fw400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
