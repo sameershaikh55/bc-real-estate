@@ -875,10 +875,8 @@ p {
 }
 // INPUT END
 
-// AGENTS START
-.agents_container {
-  padding-bottom: 5rem;
-
+// AGENT CARD
+.agent_card {
   .card-box-d {
     position: relative;
     overflow: hidden;
@@ -953,6 +951,12 @@ p {
     margin-right: 25px;
   }
 
+  .card-box-d .list-inline-item {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
   .link-one {
     color: #000000;
     transition: all 0.5s ease;
@@ -998,6 +1002,12 @@ p {
   .agent-info-box .socials-footer li {
     margin-right: 1.5rem;
   }
+}
+// AGENT CARD
+
+// AGENTS START
+.agents_container {
+  padding-bottom: 5rem;
 }
 // AGENTS END
 
@@ -1584,3 +1594,100 @@ p {
   font-weight: 600;
 }
 // SELECTBOX END
+
+// DETAILED AGENT CARD START
+.detailed_agent_card_container {
+  .card-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px #ccc;
+    transition: all 0.3s ease-in-out;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px #ccc;
+  }
+
+  .card-image-container {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-image {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .card-image-hover {
+    transform: scale(1.1);
+  }
+
+  .card-info-container {
+    width: 70%;
+    padding: 20px;
+    color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-name {
+    font-size: 34px;
+    color: #ff5a3c;
+    margin-bottom: 10px;
+  }
+
+  .card-bio {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .card-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-detail {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .card-detail-icon {
+    color: #ff5a3c;
+    margin-right: 10px;
+  }
+
+  .card-detail-text {
+    font-size: 18px;
+  }
+
+  .card-social-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-social-icon {
+    color: #ff5a3c;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-social-icon:hover {
+    transform: scale(1.2);
+  }
+}
+// DETAILED AGENT CARD END
+
+// RESPONSIVE START
+// RESPONSIVE END
