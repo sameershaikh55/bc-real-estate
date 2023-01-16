@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 // COMPONENTS
 import TopHeader from "./components/TopHeader";
@@ -8,6 +9,11 @@ import Newsletter from "./components/Newsletter";
 import Location from "./components/Location";
 
 const Layout = ({ children }) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <>
       <div className="header_container">

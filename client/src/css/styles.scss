@@ -30,6 +30,9 @@ html {
 body {
   overflow-x: hidden;
 }
+.lucida {
+  font-family: "CGP", Helvetica, Arial, Lucida, sans-serif;
+}
 @media screen and (max-width: 992px) {
   html {
     font-size: 100%;
@@ -1688,6 +1691,71 @@ p {
   }
 }
 // DETAILED AGENT CARD END
+
+// PROPERTy DETAIL START
+.single_property_container {
+  padding-top: 4rem;
+
+  .info-wrap {
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+
+  .info .icon {
+    font-size: 20px;
+    color: #f03c02;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #ffeee8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+
+    * {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .info:hover .icon {
+    background: #f03c02;
+
+    .i {
+      color: #fff;
+    }
+  }
+}
+
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+
+  .table-header {
+    background-color: #ff5a3c;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  tr {
+    .table-data:nth-child(1) {
+      border: 1px solid #ddd;
+      padding: 12px;
+      font-size: 18px;
+      width: 300px;
+    }
+    .table-data:nth-child(2) {
+      border: 1px solid #ddd;
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+}
+// PROPERTy DETAIL END
 
 // RESPONSIVE START
 // RESPONSIVE END

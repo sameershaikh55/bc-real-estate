@@ -6,7 +6,7 @@ import { BsPhone } from "react-icons/bs";
 import Button from "./Button";
 import Input from "../components/Input";
 
-const Contact = ({ page }) => {
+const Contact = ({ page, inquiry }) => {
   const fields = [
     {
       label: "Name",
@@ -26,11 +26,12 @@ const Contact = ({ page }) => {
   ];
 
   return (
-    <div className={`contact_container ${page && "pt-5"}`}>
+    <div className={`contact_container ${page && !inquiry && "pt-5"}`}>
       {page && <br />}
       <div className="page_container">
         <div className="container-fluid">
           {!page && <STtitle>Contact Us</STtitle>}
+          {inquiry && <STtitle>Send Inquiry</STtitle>}
 
           <div className="row justify-content-center">
             <div className="col-lg-10">
@@ -89,37 +90,41 @@ const Contact = ({ page }) => {
                       </div>
                     );
                   })}
-                  <div className="col-6">
-                    <Input label="Subject" name="subject" type="text" />
-                  </div>
-                  <div className="col-6">
-                    <div className="row align-items-center checkbox__wrapper">
-                      <label className="col-6 justify-content-center checkbox">
-                        Buy a Home
-                        <input type="checkbox" className="checkbox__input" />
-                        <span className="checkbox__check">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="checkbox__svg"
-                          >
-                            <path d="M 1 7 L 4 10 L 10 2" fill="none" />
-                          </svg>
-                        </span>
-                      </label>
-                      <label className="col-6 justify-content-center checkbox">
-                        Sell a Home
-                        <input type="checkbox" className="checkbox__input" />
-                        <span className="checkbox__check">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="checkbox__svg"
-                          >
-                            <path d="M 1 7 L 4 10 L 10 2" fill="none" />
-                          </svg>
-                        </span>
-                      </label>
+                  {!inquiry && (
+                    <div className="col-6">
+                      <Input label="Subject" name="subject" type="text" />
                     </div>
-                  </div>
+                  )}
+                  {!inquiry && (
+                    <div className="col-6">
+                      <div className="row align-items-center checkbox__wrapper">
+                        <label className="col-6 justify-content-center checkbox">
+                          Buy a Home
+                          <input type="checkbox" className="checkbox__input" />
+                          <span className="checkbox__check">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="checkbox__svg"
+                            >
+                              <path d="M 1 7 L 4 10 L 10 2" fill="none" />
+                            </svg>
+                          </span>
+                        </label>
+                        <label className="col-6 justify-content-center checkbox">
+                          Sell a Home
+                          <input type="checkbox" className="checkbox__input" />
+                          <span className="checkbox__check">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="checkbox__svg"
+                            >
+                              <path d="M 1 7 L 4 10 L 10 2" fill="none" />
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="form-group mt-3">
                   <textarea
