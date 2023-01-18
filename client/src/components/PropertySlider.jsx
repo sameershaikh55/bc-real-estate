@@ -35,7 +35,7 @@ const PropertySlider = () => {
   return (
     <div className="property_slider_container">
       <HeroSlider
-        height={"700px"}
+        height={(window.innerWidth < 575 && "250px") || "700px"}
         autoplay
         controller={{
           initialSlide: 1,

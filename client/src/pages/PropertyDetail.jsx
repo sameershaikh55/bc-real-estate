@@ -121,7 +121,7 @@ const PropertyDetail = () => {
         <div className="page_container">
           <div className="container-fluid">
             <div className="row gy-4">
-              <div className="col-12 d-flex justify-content-between align-items-center">
+              <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center gap-5">
                 <a href="#inquiryForm" className="text-decoration-none">
                   <Button>
                     <span className="opacity-0">...</span>
@@ -149,28 +149,28 @@ const PropertyDetail = () => {
                   <div className="col-lg-11">
                     <div className="info-wrap rounded-3">
                       <div className="row">
-                        <div className="col-lg-3 d-flex justify-content-center align-items-center gap-2 info">
+                        <div className="col-md-3 d-flex justify-content-md-center align-items-center gap-2 info">
                           <div className="icon">
                             <BiBed className="i" />
                           </div>
                           <h4 className="mb-0">4 Beds</h4>
                         </div>
 
-                        <div className="col-lg-3 d-flex justify-content-center align-items-center gap-2 info mt-4 mt-lg-0">
+                        <div className="col-md-3 d-flex justify-content-md-center align-items-center gap-2 info mt-4 mt-lg-0">
                           <div className="icon">
                             <TbBath className="i" />
                           </div>
                           <h4 className="mb-0">2.10 Baths</h4>
                         </div>
 
-                        <div className="col-lg-3 d-flex justify-content-center align-items-center gap-2 info mt-4 mt-lg-0">
+                        <div className="col-md-3 d-flex justify-content-md-center align-items-center gap-2 info mt-4 mt-lg-0">
                           <div className="icon">
                             <BiShapeSquare className="i" />
                           </div>
                           <h4 className="mb-0">2,084 SqFt</h4>
                         </div>
 
-                        <div className="col-lg-3 d-flex justify-content-center align-items-center gap-2 info mt-4 mt-lg-0">
+                        <div className="col-md-3 d-flex justify-content-md-center align-items-center gap-2 info mt-4 mt-lg-0">
                           <div className="icon">
                             <FaCheckCircle className="i" />
                           </div>
@@ -182,7 +182,7 @@ const PropertyDetail = () => {
                 </div>
               </div>
 
-              <div className="col-11 mx-auto">
+              <div className="col-12 col-md-11 mx-auto">
                 <h1 className="mt-4">DESCRIPTION</h1>
                 <p>
                   Fabulous property on an oversized corner lot in the Woodland
@@ -207,14 +207,14 @@ const PropertyDetail = () => {
                 </p>
               </div>
 
-              <div className="col-11 mx-auto">
+              <div className="col-12 col-md-11 mx-auto">
                 <br />
                 {propertyDetail.map((content, i) => {
                   return <PropertyDetailTable key={i} {...content} />;
                 })}
               </div>
 
-              <div className="col-11 mx-auto">
+              <div className="col-12 col-md-11 mx-auto">
                 <h1 className="mt-4">Property location in Google Map</h1>
                 <div>
                   <iframe

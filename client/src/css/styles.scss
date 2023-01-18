@@ -1884,6 +1884,22 @@ p {
 }
 // PROPERTy DETAIL END
 
+// TABLE START
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+
+  table {
+    min-width: 500px;
+
+    tr .table-data:nth-child(1),
+    tr .table-data:nth-child(2) {
+      font-size: 14px;
+    }
+  }
+}
+// TABLE END
+
 // RESPONSIVE START
 @media screen and (max-width: 992px) {
 }
@@ -1954,6 +1970,10 @@ p {
     .page_container {
       width: 100%;
     }
+  }
+
+  .hero_container.hero2 .wrapper_container .title_container {
+    font-size: 2.5rem;
   }
 }
 // RESPONSIVE END
