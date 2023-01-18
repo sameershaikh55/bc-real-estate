@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "../../components/Logo";
 import navlinks from "../navlinks/index.json";
 
-const Header = () => {
+const Header = ({ ClickEvent, isOpen }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -21,8 +21,8 @@ const Header = () => {
       <div className="page_container">
         <div className="container-fluid">
           <div className="d-flex align-items-center justify-content-between w-100">
-            <Logo />{" "}
-            <ul className="navlinks list-unstyled d-flex gap-3 mb-0">
+            <Logo isOpen={isOpen} ClickEvent={ClickEvent} />{" "}
+            <ul className="d-none d-sm-flex navlinks list-unstyled d-flex gap-3 mb-0">
               {navlinks.map((content, i) => {
                 return (
                   <li key={i}>
@@ -39,6 +39,20 @@ const Header = () => {
                 );
               })}
             </ul>
+            <div className="d-flex d-sm-none">
+              {(isOpen && (
+                <div onClick={ClickEvent} className="cross-icon">
+                  <div className="cross-icon__bar cross-icon__bar--top"></div>
+                  <div className="cross-icon__bar cross-icon__bar--bottom"></div>
+                </div>
+              )) || (
+                <div onClick={ClickEvent} className="d-flex hamburger">
+                  <div className="line"></div>
+                  <div className="line"></div>
+                  <div className="line"></div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

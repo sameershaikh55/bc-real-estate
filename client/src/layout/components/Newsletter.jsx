@@ -48,7 +48,7 @@ const Newsletter = () => {
                 const { label, name, type, icon } = content;
 
                 return (
-                  <div key={i} className="col-3">
+                  <div key={i} className="col-12 col-md-6 col-lg-3">
                     <Input label={label} name={name} type={type} icon={icon} />
                   </div>
                 );

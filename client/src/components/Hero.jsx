@@ -9,6 +9,7 @@ import bg_1 from "../assets/images/bg_1.jpg.webp";
 import bg_2 from "../assets/images/bg_2.jpg";
 import bg_3 from "../assets/images/bg_3.jpg.webp";
 import bg_4 from "../assets/images/bg_4.jpg";
+import { Link } from "react-router-dom";
 
 function Subtitle(props) {
   return <p className="subtitle_container">{props.children}</p>;
@@ -81,7 +82,9 @@ const Hero = () => {
               eiusmod tempor incididunt ut labore.{" "}
             </Subtitle>
             <br />
-            <Button>Make An Enquiry</Button>
+            <Link className="text-decoration-none" to="/contact">
+              <Button>Make An Enquiry</Button>
+            </Link>
           </Wrapper>
         </Overlay>
 

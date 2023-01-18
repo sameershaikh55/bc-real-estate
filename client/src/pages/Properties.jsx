@@ -22,27 +22,31 @@ const Properties = () => {
       <div className="page_container pb-5">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 my-5 d-flex justify-content-end">
-              <SelectBox
-                state={sort}
-                options={["All", "Sell", "Buy"]}
-                onChange={(e) => setSort(e)}
-              />
-            </div>
-
-            {[
-              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1,
-            ].map((content, i) => {
-              return (
-                <div key={i} className="col-4">
-                  <PropertyCard />
+            <div className="col-11 mx-auto">
+              <div className="row">
+                <div className="col-12 my-5 d-flex justify-content-end">
+                  <SelectBox
+                    state={sort}
+                    options={["All", "Sell", "Buy"]}
+                    onChange={(e) => setSort(e)}
+                  />
                 </div>
-              );
-            })}
 
-            <div className="col-12">
-              <Pagination totalPages={10} />
+                {[
+                  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                  1, 1,
+                ].map((content, i) => {
+                  return (
+                    <div key={i} className="col-12 col-md-6 col-lg-4">
+                      <PropertyCard />
+                    </div>
+                  );
+                })}
+
+                <div className="col-12">
+                  <Pagination totalPages={10} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

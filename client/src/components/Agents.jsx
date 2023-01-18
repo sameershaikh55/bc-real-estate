@@ -56,13 +56,17 @@ const Agents = () => {
           <STtitle>Best Agents</STtitle>
 
           <div className="row">
-            {agents.map((content, i) => {
-              return (
-                <div key={i} className="col-md-4">
-                  <AgentCard {...content} />
-                </div>
-              );
-            })}
+            <div className="col-11 mx-auto">
+              <div className="row gy-4">
+                {agents.map((content, i) => {
+                  return (
+                    <div key={i} className="col-md-4">
+                      <AgentCard {...content} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           <div className="mt-4">

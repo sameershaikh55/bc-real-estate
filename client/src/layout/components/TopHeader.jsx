@@ -20,7 +20,7 @@ const TopHeader = () => {
                   info@webmail.com
                 </a>
               </li>
-              <li>
+              <li className="d-none d-sm-block">
                 <a
                   className="d-flex text-decoration-none gap-2 align-items-center f14 text-white"
                   href=""

@@ -34,7 +34,7 @@ const Contact = ({ page, inquiry }) => {
           {inquiry && <STtitle>Send Inquiry</STtitle>}
 
           <div className="row justify-content-center">
-            <div className="col-lg-10">
+            <div className="col-11 mx-auto col-lg-10">
               <div className="info-wrap">
                 <div className="row">
                   <div className="col-lg-4 info">
@@ -78,25 +78,25 @@ const Contact = ({ page, inquiry }) => {
           </div>
 
           <div className="row mt-5 justify-content-center">
-            <div className="col-lg-10">
+            <div className="col-11 mx-auto col-lg-10">
               <form>
-                <div className="row align-items-center gy-3">
+                <div className="row align-items-center gy-4 gy-md-3">
                   {fields.map((content, i) => {
                     const { label, name, type } = content;
 
                     return (
-                      <div key={i} className="col-4">
+                      <div key={i} className="col-12 col-md-4">
                         <Input label={label} name={name} type={type} />
                       </div>
                     );
                   })}
                   {!inquiry && (
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                       <Input label="Subject" name="subject" type="text" />
                     </div>
                   )}
                   {!inquiry && (
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                       <div className="row align-items-center checkbox__wrapper">
                         <label className="col-6 justify-content-center checkbox">
                           Buy a Home
@@ -126,7 +126,7 @@ const Contact = ({ page, inquiry }) => {
                     </div>
                   )}
                 </div>
-                <div className="form-group mt-3">
+                <div className="form-group mt-4 mt-md-3">
                   <textarea
                     className="form-control"
                     name="message"

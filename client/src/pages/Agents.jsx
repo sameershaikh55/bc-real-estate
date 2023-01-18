@@ -147,20 +147,24 @@ const Agents = () => {
 
       <div className="page_container py-5">
         <div className="container-fluid">
-          <div className="row gy-5">
-            <div className="col-12">
-              <div className="detailed_agent_card_container">
-                <DetailedAgentCard {...agents[0]} />
-              </div>
-            </div>
-
-            {agents.map((content, i) => {
-              return (
-                <div key={i} className="col-md-4">
-                  <AgentCard {...content} />
+          <div className="row">
+            <div className="col-11 mx-auto">
+            <div className="row gy-5">
+              <div className="col-12">
+                <div className="detailed_agent_card_container">
+                  <DetailedAgentCard {...agents[0]} />
                 </div>
-              );
-            })}
+              </div>
+
+              {agents.map((content, i) => {
+                return (
+                  <div key={i} className="col-md-4">
+                    <AgentCard {...content} />
+                  </div>
+                );
+              })}
+            </div>
+            </div>
           </div>
         </div>
       </div>
