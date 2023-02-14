@@ -26,6 +26,9 @@ app.use(cors());
 
 // ROUTE IMPORT
 const auth = require("./routes/auth");
+const contact = require("./routes/contact");
+const newsletter = require("./routes/newsletter");
+const promocode = require("./routes/promoCode");
 
 // TESTING
 app.get("/", (req, res) => {
@@ -34,6 +37,9 @@ app.get("/", (req, res) => {
 
 // CONTROLLERS
 app.use("/api/auth", auth);
+app.use("/api/contact", contact);
+app.use("/api/newsletter", newsletter);
+app.use("/api/promocode", promocode);
 
 // Middleware for Errors
 app.use(errorMiddleware);
