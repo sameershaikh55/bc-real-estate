@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Properties from "./pages/Properties";
 import PropertyDetail from "./pages/PropertyDetail";
+import Newsletter from "./pages/Newsletter";
 
 const AppRoutes = () => {
   return (
@@ -17,9 +18,10 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/properties" element={<Properties />} />
-          <Route path="/agents" element={<Agents />} />
+          <Route path="/team" element={<Agents />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/property-detail" element={<PropertyDetail />} />
+          <Route path="/newsletter" element={<Newsletter />} />
         </Routes>
       </Layout>
     </Router>

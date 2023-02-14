@@ -19,7 +19,7 @@ const SelectBox = ({ state, options, onChange }) => {
   }, []);
 
   return (
-    <div className="select-box-container">
+  <div className="select-box-container">
       <div
         className="select-box-selected-option"
         onClick={() => {

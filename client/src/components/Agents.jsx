@@ -53,7 +53,7 @@ const Agents = () => {
     <div className="agents_container">
       <div className="page_container">
         <div className="container-fluid">
-          <STtitle>Best Agents</STtitle>
+          <STtitle>Meet the Team</STtitle>
 
           <div className="row">
             <div className="col-11 mx-auto">

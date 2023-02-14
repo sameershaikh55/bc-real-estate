@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../components/Input";
+import SelectBox from "../../components/SelectBox";
 import STtitle from "../../components/STtitle";
 import { TfiEmail } from "react-icons/tfi";
 import { HiOutlineQrCode } from "react-icons/hi2";
@@ -7,6 +8,8 @@ import { MdLocationCity } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
 
 const Newsletter = () => {
+  const [sort, setSort] = useState("Grand Canyon");
+
   const fields = [
     {
       label: "Email",
@@ -15,7 +18,7 @@ const Newsletter = () => {
       icon: <TfiEmail fontSize={18} />,
     },
     {
-      label: "Promo code",
+      label: "Promo code (optional)",
       type: "text",
       name: "promoCode",
       icon: <HiOutlineQrCode fontSize={20} />,
@@ -49,7 +52,20 @@ const Newsletter = () => {
 
                 return (
                   <div key={i} className="col-12 col-md-6 col-lg-3">
-                    <Input label={label} name={name} type={type} icon={icon} />
+                    {(label === "Area Name" && (
+                      <SelectBox
+                        state={sort}
+                        options={["Grand Canyon", "Statue of Liberty ", "Golden Gate Bridge"]}
+                        onChange={(e) => setSort(e)}
+                      />
+                    )) || (
+                      <Input
+                        label={label}
+                        name={name}
+                        type={type}
+                        icon={icon}
+                      />
+                    )}
                   </div>
                 );
               })}

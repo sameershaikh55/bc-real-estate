@@ -8,8 +8,12 @@
     "link": "/properties"
   },
   {
-    "label": "Agents",
-    "link": "/agents"
+    "label": "Our Team",
+    "link": "/team"
+  },
+  {
+    "label": "Newsletter",
+    "link": "/newsletter"
   },
   {
     "label": "Contact",

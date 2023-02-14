@@ -6,6 +6,7 @@ import Featured from "../components/Featured";
 import Agents from "../components/Agents";
 import FeaturedSlider from "../components/FeaturedSlider";
 import Contact from "../components/Contact";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Featured />
       <FeaturedSlider />
       <Agents />
+      <Testimonials />
       <Contact />
     </>
   );

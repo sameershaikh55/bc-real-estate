@@ -29,8 +29,8 @@ const Layout = ({ children }) => {
       </div>
       <Sidebar ClickEvent={OnClick} isOpen={isOpen} />
       {children}
-      <Location />
-      <Newsletter />
+      {/* {location.pathname !== "/newsletter" && <Location />} */}
+      {location.pathname !== "/newsletter" && <Newsletter />}
       <Footer />
     </>
   );
