@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // COMPONENTS
 import Hero2 from "../components/Hero2";
@@ -7,7 +8,9 @@ import Pagination from "../components/Pagination";
 import Contact from "../components/Contact";
 
 const Properties = () => {
-  const [sort, setSort] = useState(1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const search = location.search.replace("?", "");
 
   return (
     <>
@@ -27,21 +30,21 @@ const Properties = () => {
                 <div className="col-12 my-5 d-flex justify-content-center">
                   <div className="buy_sell_container">
                     <button
-                      onClick={() => setSort(0)}
-                      className={`${sort === 0 && "active"}`}
+                      onClick={() => navigate("/properties?sell")}
+                      className={`${search === "sell" && "active"}`}
                     >
                       Sell
                     </button>
                     <button
-                      onClick={() => setSort(1)}
-                      className={`${sort === 1 && "active"}`}
+                      onClick={() => navigate("/properties?buy")}
+                      className={`${search === "buy" && "active"}`}
                     >
                       Buy
                     </button>
                   </div>
                 </div>
 
-                {sort === 0 && (
+                {search === "sell" && (
                   <div className="col-12">
                     <div className="row">
                       <div className="col-12">
@@ -92,7 +95,7 @@ const Properties = () => {
                   </div>
                 )}
 
-                {sort === 1 && (
+                {search === "buy" && (
                   <div className="col-12">
                     <div className="row">
                       {[
@@ -117,7 +120,7 @@ const Properties = () => {
         </div>
       </div>
 
-      {sort === 0 && <Contact page inquiry />}
+      {search === "sell" && <Contact page inquiry />}
     </>
   );
 };

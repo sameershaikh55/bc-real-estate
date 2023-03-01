@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import PropertyCard from "./PropertyCard";
 import STtitle from "./STtitle";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const settings = {
@@ -50,11 +51,13 @@ const Featured = () => {
           </Slider>
 
           <div style={{ marginTop: "-25px" }}>
-            <Button>
-              <span className="opacity-0">....</span>
-              view more
-              <span className="opacity-0">....</span>
-            </Button>
+            <Link className="text-decoration-none" to="/properties?buy">
+              <Button>
+                <span className="opacity-0">....</span>
+                view more
+                <span className="opacity-0">....</span>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

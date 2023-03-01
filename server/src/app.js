@@ -29,6 +29,8 @@ const auth = require("./routes/auth");
 const contact = require("./routes/contact");
 const newsletter = require("./routes/newsletter");
 const promocode = require("./routes/promoCode");
+const team = require("./routes/team");
+const property = require("./routes/property");
 
 // TESTING
 app.get("/", (req, res) => {
@@ -40,6 +42,8 @@ app.use("/api/auth", auth);
 app.use("/api/contact", contact);
 app.use("/api/newsletter", newsletter);
 app.use("/api/promocode", promocode);
+app.use("/api/team", team);
+app.use("/api/property", property);
 
 // Middleware for Errors
 app.use(errorMiddleware);

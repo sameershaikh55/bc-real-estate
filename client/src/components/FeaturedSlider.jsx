@@ -85,23 +85,31 @@ const FeaturedSlider = () => {
             <div className="page_container">
               <div className="row align-items-center">
                 <div className="col-7">
-                  <video className="w-100" src={property} loop muted autoplay></video>
+                  <video
+                    className="w-100"
+                    src={property}
+                    loop
+                    muted
+                    autoplay
+                  ></video>
                 </div>
                 <div className="col-5 text-white">
                   <h1 className="fw800">New Home</h1>
                   <p>
                     deserunt dignissimos ratione iusto sunt cum! Odit quasi
-                    facilis facere amet sapiente sed ipsa perferendis
-                    temporibus sit error numquam explicabo, nobis, corporis
-                    dolorem ut at maxime eligendi delectus! Magni quas ex
-                    voluptate possimus ab, dicta expedita sed ea laborum eos
-                    aspernatur
+                    facilis facere amet sapiente sed ipsa perferendis temporibus
+                    sit error numquam explicabo, nobis, corporis dolorem ut at
+                    maxime eligendi delectus! Magni quas ex voluptate possimus
+                    ab, dicta expedita sed ea laborum eos aspernatur
                   </p>
                   <div className="mt-4">
-                    <Link className="text-decoration-none" to="/properties">
+                    <Link
+                      className="text-decoration-none"
+                      to="/properties?sell"
+                    >
                       <Button>
                         <span className="opacity-0">....</span>
-                        more properties
+                        Sell my property
                         <span className="opacity-0">....</span>
                       </Button>
                     </Link>

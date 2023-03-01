@@ -132,7 +132,7 @@ const PropertyDetail = () => {
                 <p className="f18">
                   <Link
                     className="text-dark text-decoration-none"
-                    to="/properties"
+                    to="/properties?buy"
                   >
                     Properties
                   </Link>{" "}
