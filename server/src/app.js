@@ -31,6 +31,7 @@ const newsletter = require("./routes/newsletter");
 const promocode = require("./routes/promoCode");
 const team = require("./routes/team");
 const property = require("./routes/property");
+const buyingPropertyInquiry = require("./routes/buyingPropertyInquiry");
 
 // TESTING
 app.get("/", (req, res) => {
@@ -44,6 +45,7 @@ app.use("/api/newsletter", newsletter);
 app.use("/api/promocode", promocode);
 app.use("/api/team", team);
 app.use("/api/property", property);
+app.use("/api/inquiry/buy", buyingPropertyInquiry);
 
 // Middleware for Errors
 app.use(errorMiddleware);
