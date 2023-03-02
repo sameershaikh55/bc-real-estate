@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // ROUTE IMPORT
+const pictureUrl = require("./routes/pictureUrl");
 const auth = require("./routes/auth");
 const contact = require("./routes/contact");
 const newsletter = require("./routes/newsletter");
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 // CONTROLLERS
+app.use("/api/picture-url", pictureUrl);
 app.use("/api/auth", auth);
 app.use("/api/contact", contact);
 app.use("/api/newsletter", newsletter);

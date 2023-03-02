@@ -40,13 +40,6 @@ const propertySchema = new Schema({
       trim: true,
     },
   ],
-
-  propertyImages: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
   propertyDetails: {
     price: {
       type: String,

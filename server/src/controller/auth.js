@@ -53,15 +53,29 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
 // Update USER
 exports.updateUser = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  const updated = await RegistrationModel.findByIdAndUpdate(id, req.body, {
+  const user = await RegistrationModel.findById(id);
+
+  user.email = req.body.email;
+
+  if (req.body.password) {
+    user.password = req.body.password;
+  }
+
+  await user.save({
     new: true,
     runValidators: true,
   });
-  sendResponse(true, 200, "user", updated, res);
+
+  sendResponse(true, 200, "user", user, res);
 });
 
 // Get all USERs
 exports.allUsers = catchAsyncErrors(async (req, res, next) => {
   const users = await RegistrationModel.find();
   sendResponse(true, 200, "users", users, res);
+});
+
+// GET USER DATA WITH TOKEN AUTHENTICATION
+exports.getUserData = catchAsyncErrors(async (req, res, next) => {
+  sendResponse(true, 200, "user", res.user, res);
 });

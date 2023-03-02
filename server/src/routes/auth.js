@@ -12,6 +12,7 @@ const {
   updateUser,
   deleteUser,
   allUsers,
+  getUserData,
 } = require("../controller/auth");
 
 // ROUTES
@@ -21,7 +22,11 @@ router.route("/logout").get(logout);
 router.route("/users").get(authentication, allUsers);
 router
   .route("/user/:id")
-  .put(authentication, updateUser)
+  .patch(authentication, updateUser)
   .delete(authentication, deleteUser);
+
+// AUTHENTICATED
+router.route("/user-data").get(authentication, getUserData);
+// AUTHENTICATED
 
 module.exports = router;
