@@ -23,6 +23,7 @@ import Release from "./pages/Release";
 import { useDispatch } from "react-redux";
 import { loadUser } from "./redux/action/auth";
 import Contact from "./pages/Contact";
+import Newsletter from "./pages/Newsletter";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -95,6 +96,14 @@ function App() {
             element={
               <Protected>
                 <Contact />
+              </Protected>
+            }
+          />
+          <Route
+            path="/newsletter"
+            element={
+              <Protected>
+                <Newsletter />
               </Protected>
             }
           />
