@@ -3,12 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
 
 // IMPORTING ROUTER AND SWITCH
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Public from "./components/Route/PublicRoute";
 import Protected from "./components/Route/ProtectedRoute";
@@ -17,13 +12,11 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Users from "./pages/Users";
 import Team from "./pages/Team";
-import Payment from "./pages/Payment";
-import Settings from "./pages/Settings";
-import Release from "./pages/Release";
 import { useDispatch } from "react-redux";
 import { loadUser } from "./redux/action/auth";
 import Contact from "./pages/Contact";
 import Newsletter from "./pages/Newsletter";
+import PromoCode from "./pages/PromoCode";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -107,23 +100,14 @@ function App() {
               </Protected>
             }
           />
-
-          {/* 
           <Route
-            path="/payment"
+            path="/promocode"
             element={
               <Protected>
-                <Payment />
+                <PromoCode />
               </Protected>
             }
           />
-          <Route
-            path="/settings"
-            element={
-              <Settings localMode={localMode} mode={mode} setMode={setMode} />
-            }
-          />
-          <Route path="/releases" element={<Release />} /> */}
         </Routes>
       </Router>
     </div>

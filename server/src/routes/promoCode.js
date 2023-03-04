@@ -20,6 +20,6 @@ router
 router
   .route("/:id")
   .delete(authentication, deleteRequest)
-  .put(authentication, updateRequest);
+  .patch(authentication, updateRequest);
 
 module.exports = router;

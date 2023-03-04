@@ -7,6 +7,7 @@ import { resetPasswordReducer, userReducer } from "./reducer/auth";
 import { users } from "./reducer/users";
 import { team } from "./reducer/team";
 import { newsletter } from "./reducer/newsletter";
+import { promos } from "./reducer/promo";
 import { contact } from "./reducer/contact";
 import { pictureUrl } from "./reducer/pictureUrl";
 
@@ -16,6 +17,7 @@ const reducer = combineReducers({
   users,
   team,
   contact,
+  promos,
   newsletter,
   pictureUrl,
 });
