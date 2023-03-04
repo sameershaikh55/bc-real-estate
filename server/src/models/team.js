@@ -12,13 +12,13 @@ const teamSchema = new Schema({
     type: String,
     required: [true, "Please Enter Short Intro"],
     trim: true,
-    minLength: [60, "Password should be greater than 60 characters"],
+    maxLength: [60, "Short Intro should be less than 60 characters"],
   },
   longIntro: {
     type: String,
     required: [true, "Please Enter Long Intro"],
     trim: true,
-    minLength: [512, "Password should be greater than 512 characters"],
+    maxLength: [512, "Long Intro should be less than 512 characters"],
   },
   email: {
     type: String,

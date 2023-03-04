@@ -21,6 +21,6 @@ router
 router
   .route("/:id")
   .delete(authentication, deleteMember)
-  .put(authentication, upload.single("memberImage"), updateMember);
+  .patch(authentication, upload.single("memberImage"), updateMember);
 
 module.exports = router;

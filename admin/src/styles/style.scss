@@ -191,6 +191,54 @@ body {
   background: #8961de !important;
 }
 
+.modal_container {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  background: #0000009a;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .product_setup {
+    min-width: 400px;
+
+    form {
+      max-height: 500px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color1;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .upload-btn-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+}
+
 // LIGHT START
 .light {
   // LOGIN START

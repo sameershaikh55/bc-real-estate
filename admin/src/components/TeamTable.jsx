@@ -3,10 +3,11 @@ import { RiDeleteBinFill } from "react-icons/ri";
 import { HiPencil } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import { clearErrors, deleteUser } from "../redux/action/users";
+import { clearErrors, deleteTeam } from "../redux/action/team";
 import { DELETE_TEAM_RESET } from "../redux/type/team";
+import AddMember from "./AddMember";
 
-const TeamTable = ({ setEditData }) => {
+const TeamTable = ({ editData, setEditData, setAddMember }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -26,25 +27,33 @@ const TeamTable = ({ setEditData }) => {
   }, [dispatch, alert, teamDeleted, error]);
 
   return (
-    <div className="bg-white rounded-3">
-      <div className="user_table">
-        <table className="table">
-          <thead>
-            <tr>
-              <th className="color2 ps-4 fw500">Picture</th>
-              <th className="color2 fw500">Name</th>
-              <th className="color2 fw500">Email</th>
-              <th className="color2 fw500">Phone</th>
-              <th className="color2 fw500">Social</th>
-              <th className="color2 fw500">Created At</th>
-              <th className="color2 text-end pe-4 fw500">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {(team.length &&
-              team.map(
-                (
-                  {
+    <>
+      {editData && (
+        <AddMember
+          editData={editData}
+          setEditData={setEditData}
+          setAddMember={setAddMember}
+        />
+      )}
+
+      <div className="bg-white rounded-3">
+        <div className="user_table">
+          <table className="table">
+            <thead>
+              <tr>
+                <th className="color2 ps-4 fw500">Picture</th>
+                <th className="color2 fw500">Name</th>
+                <th className="color2 fw500">Email</th>
+                <th className="color2 fw500">Phone</th>
+                <th className="color2 fw500">Social</th>
+                <th className="color2 fw500">Created At</th>
+                <th className="color2 text-end pe-4 fw500">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(team.length &&
+                team.map((content, index) => {
+                  const {
                     _id,
                     name,
                     email,
@@ -55,9 +64,8 @@ const TeamTable = ({ setEditData }) => {
                     twitter,
                     instagram,
                     linkdin,
-                  },
-                  index
-                ) => {
+                  } = content;
+
                   return (
                     <tr key={index}>
                       <td className="color3 ps-4 fw400">
@@ -89,15 +97,10 @@ const TeamTable = ({ setEditData }) => {
                           fontSize="1.2rem"
                           color="#8961de"
                           className="pointer"
-                          onClick={() =>
-                            setEditData({
-                              _id,
-                              email,
-                            })
-                          }
+                          onClick={() => setEditData({ ...content })}
                         />
                         <RiDeleteBinFill
-                          onClick={() => dispatch(deleteUser(_id))}
+                          onClick={() => dispatch(deleteTeam(_id))}
                           className="ms-2 pointer"
                           fontSize="1.2rem"
                           color="#8961de"
@@ -105,18 +108,17 @@ const TeamTable = ({ setEditData }) => {
                       </td>
                     </tr>
                   );
-                }
-              )) || (
-              <tr>
-                <td className="text-center" colSpan={6}>
-                  no data found
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-      {/* <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center px-4 pb-3">
+                })) || (
+                <tr>
+                  <td className="text-center" colSpan={6}>
+                    no data found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+        {/* <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center px-4 pb-3">
         <p className="mb-0 color2">Page 1 of 37</p>
         <div className="user_btn_container">
           <button className="border-0 color2">Previous</button>
@@ -125,7 +127,8 @@ const TeamTable = ({ setEditData }) => {
           </button>
         </div>
       </div> */}
-    </div>
+      </div>
+    </>
   );
 };
 

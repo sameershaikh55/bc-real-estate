@@ -177,6 +177,49 @@ body {
   background: #8961de !important;
 }
 
+.modal_container {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  background: rgba(0, 0, 0, 0.6039215686);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_container .product_setup {
+  min-width: 400px;
+}
+.modal_container .product_setup form {
+  max-height: 500px;
+  overflow: auto;
+}
+.modal_container .product_setup form::-webkit-scrollbar {
+  width: 7px;
+}
+.modal_container .product_setup form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.modal_container .product_setup form::-webkit-scrollbar-thumb {
+  background: #8961de;
+  border-radius: 10px;
+}
+.modal_container .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.modal_container .upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 .light .login_container {
   background-color: #f5f6f8;
   height: 100vh;

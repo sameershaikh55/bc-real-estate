@@ -59,7 +59,7 @@ export const deleteTeam = (id) => async (dispatch) => {
 
     dispatch({
       type: DELETE_TEAM_SUCCESS,
-      payload: data.user,
+      payload: data.data,
     });
   } catch (error) {
     dispatch({
