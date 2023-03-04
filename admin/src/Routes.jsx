@@ -22,6 +22,7 @@ import Settings from "./pages/Settings";
 import Release from "./pages/Release";
 import { useDispatch } from "react-redux";
 import { loadUser } from "./redux/action/auth";
+import Contact from "./pages/Contact";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -35,19 +36,17 @@ function App() {
   let localMode = localStorage.getItem("modeLocal");
 
   useEffect(() => {
-    if (!localMode) {
-      localStorage.setItem("modeLocal", 1);
-      setMode(1);
-    } else {
-    }
+    localStorage.setItem("modeLocal", 1);
+    setMode(1);
 
-    if (!localMode) {
-      document.body.style.background = "#f5f6f8";
-    } else if (localMode == 1) {
-      document.body.style.background = "#f5f6f8";
-    } else if (localMode && localMode == 2) {
-      document.body.style.background = "#212121";
-    }
+    document.body.style.background = "#f5f6f8";
+
+    // if (!localMode) {
+    //   document.body.style.background = "#f5f6f8";
+    // } else if (localMode == 1) {
+    // } else if (localMode && localMode == 2) {
+    //   document.body.style.background = "#212121";
+    // }
   }, [localMode, mode]);
 
   return (
@@ -88,6 +87,14 @@ function App() {
             element={
               <Protected>
                 <Team />
+              </Protected>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Protected>
+                <Contact />
               </Protected>
             }
           />

@@ -6,6 +6,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { resetPasswordReducer, userReducer } from "./reducer/auth";
 import { users } from "./reducer/users";
 import { team } from "./reducer/team";
+import { contact } from "./reducer/contact";
 import { pictureUrl } from "./reducer/pictureUrl";
 
 const reducer = combineReducers({
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   resetPassword: resetPasswordReducer,
   users,
   team,
+  contact,
   pictureUrl,
 });
 
