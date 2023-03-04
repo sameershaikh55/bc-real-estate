@@ -54,7 +54,6 @@ export const contact = (
       return {
         ...state,
         error: null,
-        teamError: null,
       };
 
     default:

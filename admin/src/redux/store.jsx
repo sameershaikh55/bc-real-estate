@@ -10,6 +10,7 @@ import { newsletter } from "./reducer/newsletter";
 import { promos } from "./reducer/promo";
 import { contact } from "./reducer/contact";
 import { pictureUrl } from "./reducer/pictureUrl";
+import { buyingInquiry } from "./reducer/buyingInquiry";
 
 const reducer = combineReducers({
   user: userReducer,
@@ -20,6 +21,7 @@ const reducer = combineReducers({
   promos,
   newsletter,
   pictureUrl,
+  buyingInquiry,
 });
 
 let initialState = {};

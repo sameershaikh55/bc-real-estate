@@ -6,6 +6,7 @@ const promoCodeSchema = new Schema({
     type: String,
     required: [true, "Please Enter Promo Code"],
     trim: true,
+    unique: true,
   },
   createdAt: {
     type: Date,

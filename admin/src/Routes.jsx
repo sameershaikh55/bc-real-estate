@@ -17,6 +17,7 @@ import { loadUser } from "./redux/action/auth";
 import Contact from "./pages/Contact";
 import Newsletter from "./pages/Newsletter";
 import PromoCode from "./pages/PromoCode";
+import BuyingInquiry from "./pages/BuyingInquiry";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -105,6 +106,14 @@ function App() {
             element={
               <Protected>
                 <PromoCode />
+              </Protected>
+            }
+          />
+          <Route
+            path="/buy-inquiry"
+            element={
+              <Protected>
+                <BuyingInquiry />
               </Protected>
             }
           />
