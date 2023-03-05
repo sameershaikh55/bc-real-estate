@@ -158,6 +158,10 @@ body {
   padding: 0.09rem 0rem;
 }
 
+mark {
+  background-color: yellow;
+}
+
 .dark .color2 {
   color: #2f3036;
 }
@@ -555,6 +559,18 @@ body {
 .light .user_container_upper .user_table {
   max-width: 100%;
   overflow-x: auto;
+  max-height: calc(100vh - 230px);
+  overflow: auto;
+}
+.light .user_container_upper .user_table::-webkit-scrollbar {
+  width: 7px;
+}
+.light .user_container_upper .user_table::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.1176470588);
+}
+.light .user_container_upper .user_table::-webkit-scrollbar-thumb {
+  background: #8961de;
+  border-radius: 10px;
 }
 .light .user_container_upper .user_table table {
   width: 100%;
@@ -1332,6 +1348,18 @@ body {
 .dark .user_container_upper .user_table {
   max-width: 100%;
   overflow-x: auto;
+  max-height: calc(100vh - 230px);
+  overflow: auto;
+}
+.dark .user_container_upper .user_table::-webkit-scrollbar {
+  width: 7px;
+}
+.dark .user_container_upper .user_table::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.1176470588);
+}
+.dark .user_container_upper .user_table::-webkit-scrollbar-thumb {
+  background: #8961de;
+  border-radius: 10px;
 }
 .dark .user_container_upper .user_table table {
   width: 100%;

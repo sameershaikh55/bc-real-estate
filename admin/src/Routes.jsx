@@ -1,6 +1,6 @@
 // IMPORTING CSS
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./styles/style.css";
+import "./styles/style.scss";
 
 // IMPORTING ROUTER AND SWITCH
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Public from "./components/Route/PublicRoute";
 import Protected from "./components/Route/ProtectedRoute";
 import Redirection from "./components/Route/Redirection.jsx";
-import Dashboard from "./pages/Dashboard";
+import Properties from "./pages/Properties";
 import Login from "./pages/Login";
 import Users from "./pages/Users";
 import Team from "./pages/Team";
@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import Newsletter from "./pages/Newsletter";
 import PromoCode from "./pages/PromoCode";
 import BuyingInquiry from "./pages/BuyingInquiry";
+import AddProperty from "./pages/AddProperty";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -64,7 +65,7 @@ function App() {
             path="/"
             element={
               <Protected>
-                <Dashboard localMode={localMode} />
+                <Properties localMode={localMode} />
               </Protected>
             }
           />
@@ -117,6 +118,18 @@ function App() {
               </Protected>
             }
           />
+          {["/property", "/property/:id"].map((url) => {
+            return (
+              <Route
+                path={url}
+                element={
+                  <Protected>
+                    <AddProperty />
+                  </Protected>
+                }
+              />
+            );
+          })}
         </Routes>
       </Router>
     </div>

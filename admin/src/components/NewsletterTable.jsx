@@ -5,13 +5,11 @@ import { useAlert } from "react-alert";
 import { deleteNewsletter, clearErrors } from "../redux/action/newsletter";
 import { DELETE_NEWSLETTER_RESET } from "../redux/type/newsletter";
 
-const NewsletterTable = () => {
+const NewsletterTable = ({ filteredContacts }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { newsletters, error, newsletterDeleted } = useSelector(
-    (state) => state.newsletter
-  );
+  const { error, newsletterDeleted } = useSelector((state) => state.newsletter);
 
   useEffect(() => {
     if (error) {
@@ -40,8 +38,8 @@ const NewsletterTable = () => {
             </tr>
           </thead>
           <tbody>
-            {(newsletters.length &&
-              newsletters.map(
+            {(filteredContacts.length &&
+              filteredContacts.map(
                 (
                   { _id, email, promoCode, area, address, createdAt },
                   index

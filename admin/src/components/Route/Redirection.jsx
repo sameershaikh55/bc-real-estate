@@ -2,7 +2,7 @@ import React from "react";
 import Loader from "../Loader";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import Dashboard from "../../pages/Dashboard";
+import Dashboard from "../../pages/Properties";
 
 const Redirection = ({ localMode }) => {
   const { loading, isAuthenticated } = useSelector((state) => state.user);

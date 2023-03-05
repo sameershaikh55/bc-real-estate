@@ -36,7 +36,9 @@ exports.deleteProperty = catchAsyncErrors(async (req, res, next) => {
 // UPDATE
 exports.updateProperty = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  const previousImages = JSON.parse(req.body.previousImages);
+
+  const previousImages =
+    (req.body.previousImages && req.body.previousImages.split(",")) || [];
   const images = req.files.map((content) => content.filename);
   req.body.propertyImages = [...previousImages, ...images];
 
@@ -77,6 +79,39 @@ exports.updateProperty = catchAsyncErrors(async (req, res, next) => {
 
 // Get all
 exports.allProperties = catchAsyncErrors(async (req, res, next) => {
-  const all = await PropertyModel.find();
-  sendResponse(true, 200, "data", all, res);
+  const properties = await PropertyModel.find();
+
+  const propertiesPerPage = 15;
+  const page = parseInt(req.query.page) || 1;
+  const startIndex = (page - 1) * propertiesPerPage;
+  const endIndex = page * propertiesPerPage;
+
+  const searchKeyword = req.query.search;
+  let filteredProperties = properties;
+
+  if (searchKeyword) {
+    filteredProperties = properties.filter((property) =>
+      property.title.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
+  }
+
+  const currentPageProperties = filteredProperties.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+
+  sendResponse(
+    true,
+    200,
+    "data",
+    {
+      properties: [...currentPageProperties],
+      totalProperties: properties.length,
+      currentPagetotalProperties: currentPageProperties.length,
+      propertiesPerPage,
+      totalPages,
+      currentPage: page,
+      totalResults: filteredProperties.length,
+    },
+    res
+  );
 });

@@ -5,13 +5,11 @@ import { useAlert } from "react-alert";
 import { DELETE_CONTACT_RESET } from "../redux/type/contact";
 import { deleteContacts, clearErrors } from "../redux/action/contact";
 
-const ContactTable = () => {
+const ContactTable = ({ filteredContacts }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { contacts, error, contactDeleted } = useSelector(
-    (state) => state.contact
-  );
+  const { error, contactDeleted } = useSelector((state) => state.contact);
 
   useEffect(() => {
     if (error) {
@@ -40,8 +38,8 @@ const ContactTable = () => {
             </tr>
           </thead>
           <tbody>
-            {(contacts.length &&
-              contacts.map(
+            {(filteredContacts.length &&
+              filteredContacts.map(
                 (
                   {
                     _id,

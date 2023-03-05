@@ -6,11 +6,11 @@ import { deletePromo, clearErrors } from "../redux/action/promo";
 import { DELETE_PROMO_RESET } from "../redux/type/promo";
 import { HiPencil } from "react-icons/hi";
 
-const PromoCodeTable = ({ setEditData }) => {
+const PromoCodeTable = ({ setEditData, filteredContacts }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { promos, error, promoDeleted } = useSelector((state) => state.promos);
+  const { error, promoDeleted } = useSelector((state) => state.promos);
 
   useEffect(() => {
     if (error) {
@@ -36,8 +36,8 @@ const PromoCodeTable = ({ setEditData }) => {
             </tr>
           </thead>
           <tbody>
-            {(promos.length &&
-              promos.map(({ _id, promoCode, createdAt }, index) => {
+            {(filteredContacts.length &&
+              filteredContacts.map(({ _id, promoCode, createdAt }, index) => {
                 return (
                   <tr key={index}>
                     <td className="color3 pe-3 ps-4 fw400">{promoCode}</td>

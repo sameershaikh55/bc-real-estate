@@ -170,6 +170,10 @@ body {
   }
 }
 
+mark {
+  background-color: yellow;
+}
+
 .dark {
   .color2 {
     color: #2f3036;
@@ -647,8 +651,21 @@ body {
     }
 
     .user_table {
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f11e;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color1;
+        border-radius: 10px;
+      }
+
       max-width: 100%;
       overflow-x: auto;
+      max-height: calc(100vh - 230px);
+      overflow: auto;
 
       table {
         width: 100%;
@@ -1593,8 +1610,21 @@ body {
     }
 
     .user_table {
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f11e;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color1;
+        border-radius: 10px;
+      }
+
       max-width: 100%;
       overflow-x: auto;
+      max-height: calc(100vh - 230px);
+      overflow: auto;
 
       table {
         width: 100%;
