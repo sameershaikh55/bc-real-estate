@@ -30,8 +30,10 @@ export const login = (email, password, role) => async (dispatch) => {
       { email, password, role },
       config
     );
+    const pictureUrlData = await axios.get(`/api/picture-url`);
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
+    dispatch({ type: PICTURE_URL, payload: pictureUrlData.data });
   } catch (error) {
     dispatch({ type: LOGIN_FAIL, payload: error.response.data.message });
   }

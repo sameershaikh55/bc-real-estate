@@ -174,6 +174,74 @@ mark {
   background-color: yellow;
 }
 
+// SELECTBOX START
+.select-box-container {
+  position: relative;
+  width: 100%;
+}
+
+.select-box-selected-option {
+  background-color: rgba(235, 239, 242, 0.35);
+  border: 1px solid #ebeff2;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+.select-box-selected-option:hover {
+  box-shadow: 0px 2px 3px #ccc;
+}
+
+.select-box-selected-option-text {
+  color: #90a0b7;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.select-box-icon {
+  color: $color1;
+}
+
+.select-box-options-container {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  display: none;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  margin-top: 8px;
+}
+
+.select-box-options-container.show {
+  display: block;
+}
+
+.select-box-option {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.select-box-option:hover {
+  background-color: #f5f5f5;
+}
+
+.select-box-option.selected {
+  background-color: $color1;
+  color: #fff;
+  font-weight: 600;
+}
+// SELECTBOX END
+
 .dark {
   .color2 {
     color: #2f3036;
@@ -702,6 +770,49 @@ mark {
   // PAYMENT PLANS START
   .payment_container_upper {
     .product_setup {
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color1;
+        border-radius: 10px;
+      }
+
+      .upload-btn-wrapper {
+        position: relative;
+
+        .cross-icon {
+          background: red;
+          position: absolute;
+          top: -10%;
+          right: -10%;
+          color: #fff;
+          width: 22px;
+          height: 22px;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+        }
+      }
+
+      .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+
+      .abs {
+        left: 1rem;
+        top: 0.6rem;
+      }
+
       label {
         color: #90a0b7;
         margin-bottom: 0.1rem;
@@ -1948,25 +2059,6 @@ mark {
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-    }
-
-    .upload-btn-wrapper {
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .upload-btn-wrapper input[type="file"] {
-      font-size: 100px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-    }
-
-    .abs {
-      left: 1rem;
-      top: 0.6rem;
     }
   }
   // FORMS DATA END

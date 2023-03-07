@@ -14,10 +14,14 @@ import {
   UPDATE_PROPERTY_SUCCESS,
   UPDATE_PROPERTY_FAIL,
   UPDATE_PROPERTY_RESET,
+  GET_SINGLE_PROPERTY_FAIL,
+  GET_SINGLE_PROPERTY_REQUEST,
+  GET_SINGLE_PROPERTY_SUCCESS,
 } from "../type/property";
 
 export const property = (
   state = {
+    property: {},
     properties: [],
     totalProperties: "",
     currentPagetotalProperties: "",
@@ -29,7 +33,9 @@ export const property = (
 ) => {
   switch (action.type) {
     case GET_PROPERTY_REQUEST:
+    case GET_SINGLE_PROPERTY_REQUEST:
       return {
+        ...state,
         loading: true,
       };
     case ADD_PROPERTY_REQUEST:
@@ -43,7 +49,7 @@ export const property = (
         ...state,
         propertyLoading: false,
         success: action.payload.success,
-        properties: [...state.properties, action.payload.data.properties],
+        properties: [action.payload.data, ...state.properties],
         totalProperties: ++state.totalProperties,
       };
     case UPDATE_PROPERTY_SUCCESS:
@@ -70,6 +76,12 @@ export const property = (
         currentPage: action.payload.data.currentPage,
         totalResults: action.payload.data.totalResults,
       };
+    case GET_SINGLE_PROPERTY_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        property: action.payload.data,
+      };
     case DELETE_PROPERTY_SUCCESS:
       return {
         ...state,
@@ -95,6 +107,12 @@ export const property = (
     case GET_PROPERTY_FAIL:
       return {
         properties: [],
+        loading: false,
+        error: action.payload,
+      };
+    case GET_SINGLE_PROPERTY_FAIL:
+      return {
+        property: {},
         loading: false,
         error: action.payload,
       };

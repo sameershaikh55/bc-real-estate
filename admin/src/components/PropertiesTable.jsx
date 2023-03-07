@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { HiPencil } from "react-icons/hi";
-import { FiEye } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { clearErrors, deleteProperty } from "../redux/action/property";
@@ -81,23 +80,17 @@ const PropertiesTable = ({ searchObj }) => {
                       <td className="color3 fw400">
                         <div className="d-flex align-items-center gap-2">
                           {status}
-                          <img src={check} alt="" />
+                          {status === "Active" && <img src={check} alt="" />}
                         </div>
                       </td>
                       <td className="color3 fw400">
                         {new Date(createdAt).toDateString()}
                       </td>
                       <td className="color3 text-end pe-4 fw400">
-                        <FiEye
-                          fontSize="1.2rem"
-                          color="#8961de"
-                          className="pointer"
-                          //   onClick={() => setEditData({ ...content })}
-                        />
                         <HiPencil
                           fontSize="1.2rem"
                           color="#8961de"
-                          className="ms-2 pointer"
+                          className="pointer"
                           onClick={() => navigate(`/property/${_id}`)}
                         />
                         <RiDeleteBinFill

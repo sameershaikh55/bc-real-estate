@@ -79,7 +79,7 @@ exports.updateProperty = catchAsyncErrors(async (req, res, next) => {
 
 // Get all
 exports.allProperties = catchAsyncErrors(async (req, res, next) => {
-  const properties = await PropertyModel.find();
+  const properties = await PropertyModel.find().sort({ createdAt: -1 });
 
   const propertiesPerPage = 15;
   const page = parseInt(req.query.page) || 1;
@@ -114,4 +114,15 @@ exports.allProperties = catchAsyncErrors(async (req, res, next) => {
     },
     res
   );
+});
+
+// Get property Details
+exports.getPropertyDetails = catchAsyncErrors(async (req, res, next) => {
+  const property = await PropertyModel.findById(req.params.id);
+
+  if (!property) {
+    return next(new ErrorHandler("Property not found", 404));
+  }
+
+  sendResponse(true, 200, "data", property, res);
 });

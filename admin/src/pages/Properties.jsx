@@ -81,10 +81,7 @@ const Properties = () => {
               />
             </div>
             <button
-              // onClick={() => {
-              //   setAddMember(true);
-              //   setEditData(false);
-              // }}
+              onClick={() => navigate(`/property`)}
               className="bg-purple-dark text-white border-0 px-3 py-1 rounded-3 color1 fw600"
             >
               Add Property

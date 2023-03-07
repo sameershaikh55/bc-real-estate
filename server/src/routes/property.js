@@ -11,6 +11,7 @@ const {
   createProperty,
   deleteProperty,
   updateProperty,
+  getPropertyDetails,
 } = require("../controller/property");
 
 // ROUTES
@@ -20,6 +21,7 @@ router
   .post(authentication, upload.array("propertyImages", 25), createProperty);
 router
   .route("/:id")
+  .get(getPropertyDetails)
   .delete(authentication, deleteProperty)
   .put(authentication, upload.array("propertyImages", 25), updateProperty);
 

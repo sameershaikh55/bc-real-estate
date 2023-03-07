@@ -31,7 +31,7 @@ const propertySchema = new Schema({
   },
   status: {
     type: String,
-    enum: ["notActive", "Active"],
+    enum: ["unActive", "Active"],
     default: "Active",
   },
   propertyImages: [

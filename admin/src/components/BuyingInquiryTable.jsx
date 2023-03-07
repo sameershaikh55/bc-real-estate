@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
+import { useNavigate } from "react-router-dom";
 import {
   deleteBuyingInquiry,
   clearErrors,
@@ -11,6 +12,7 @@ import { DELETE_BUYING_INQUIRY_RESET } from "../redux/type/buyingInquiry";
 const BuyingInquiryTable = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  const navigate = useNavigate();
 
   const { inquiries, error, inquiryDeleted } = useSelector(
     (state) => state.buyingInquiry
@@ -65,7 +67,13 @@ const BuyingInquiryTable = () => {
                       <td className="color3 px-3 fw400">{phone}</td>
                       <td className="color3 px-3 fw400">
                         Property:{" "}
-                        <span className="text-primary pointer">{property}</span> <br />
+                        <span
+                          onClick={() => navigate(`/?search=${_id}`)}
+                          className="text-primary pointer"
+                        >
+                          {property}
+                        </span>{" "}
+                        <br />
                         Request Type: {requestType} <br />
                         Message: {message}
                       </td>
