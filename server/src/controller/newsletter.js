@@ -32,6 +32,6 @@ exports.deleteRequest = catchAsyncErrors(async (req, res, next) => {
 
 // Get all
 exports.allRequest = catchAsyncErrors(async (req, res, next) => {
-  const all = await NewsletterModel.find();
+  const all = await NewsletterModel.find().sort({ createdAt: -1 });
   sendResponse(true, 200, "data", all, res);
 });

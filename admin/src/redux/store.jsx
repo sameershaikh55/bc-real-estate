@@ -11,6 +11,7 @@ import { promos } from "./reducer/promo";
 import { contact } from "./reducer/contact";
 import { pictureUrl } from "./reducer/pictureUrl";
 import { buyingInquiry } from "./reducer/buyingInquiry";
+import { sellingInquiry } from "./reducer/sellingInquiry";
 import { property } from "./reducer/property";
 
 const reducer = combineReducers({
@@ -23,6 +24,7 @@ const reducer = combineReducers({
   newsletter,
   pictureUrl,
   buyingInquiry,
+  sellingInquiry,
   property,
 });
 

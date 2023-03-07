@@ -8,15 +8,15 @@ const Sidebar = ({ sideBar, setSideBar }) => {
   const links = [
     { to: "/", label: "Properties" },
     { to: "/buy-inquiry", label: "Buy Inquiry" },
-    // { to: "/sell-inquiry", label: "Sell Inquiry" },
+    { to: "/sell-inquiry", label: "Sell Inquiry" },
   ];
 
   const navLinks = [
     { to: "/contact", text: "Contact" },
     { to: "/newsletter", text: "Newsletter" },
     { to: "/promocode", text: "Promocode" },
-    // { to: "/video-shorts", text: "Video Shorts" },
-    // { to: "/testimonials", text: "Testimonials" },
+    { to: "/video-shorts", text: "Video Shorts" },
+    { to: "/testimonials", text: "Testimonials" },
     { to: "/team", text: "Team" },
     { to: "/users", text: "Users" },
   ];

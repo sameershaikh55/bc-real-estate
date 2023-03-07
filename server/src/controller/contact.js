@@ -17,6 +17,6 @@ exports.deleteRequest = catchAsyncErrors(async (req, res, next) => {
 
 // Get all
 exports.allRequest = catchAsyncErrors(async (req, res, next) => {
-  const all = await ContactModel.find();
+  const all = await ContactModel.find().sort({ createdAt: -1 });
   sendResponse(true, 200, "data", all, res);
 });

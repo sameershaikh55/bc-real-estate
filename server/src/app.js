@@ -33,6 +33,7 @@ const promocode = require("./routes/promoCode");
 const team = require("./routes/team");
 const property = require("./routes/property");
 const buyingPropertyInquiry = require("./routes/buyingPropertyInquiry");
+const sellingPropertyInquiry = require("./routes/sellingPropertyInquiry");
 
 // TESTING
 app.get("/", (req, res) => {
@@ -48,6 +49,7 @@ app.use("/api/promocode", promocode);
 app.use("/api/team", team);
 app.use("/api/property", property);
 app.use("/api/inquiry/buy", buyingPropertyInquiry);
+app.use("/api/inquiry/sell", sellingPropertyInquiry);
 
 // Middleware for Errors
 app.use(errorMiddleware);

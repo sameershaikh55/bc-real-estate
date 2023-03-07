@@ -31,7 +31,7 @@ exports.deleteMember = catchAsyncErrors(async (req, res, next) => {
 // UPDATE
 exports.updateMember = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  
+
   console.log(req.body);
 
   const updated = await TeamModel.findByIdAndUpdate(id, req.body, {
@@ -63,6 +63,6 @@ exports.updateMember = catchAsyncErrors(async (req, res, next) => {
 
 // Get all
 exports.allMembers = catchAsyncErrors(async (req, res, next) => {
-  const all = await TeamModel.find();
+  const all = await TeamModel.find().sort({ createdAt: -1 });
   sendResponse(true, 200, "data", all, res);
 });

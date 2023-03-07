@@ -38,7 +38,7 @@ export const promos = (
         ...state,
         promoLoading: false,
         success: action.payload.success,
-        promos: [...state.promos, action.payload.data],
+        promos: [action.payload.data, ...state.promos],
       };
     case UPDATE_PROMO_SUCCESS:
       return {

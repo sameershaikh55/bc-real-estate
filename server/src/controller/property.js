@@ -2,6 +2,7 @@ const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const PropertyModel = require("../models/property");
 const sendResponse = require("../utils/sendResponse");
 const getFiles = require("../utils/getFiles");
+const propertyFilter = require("../utils/propertyFilter");
 const path = require("path");
 const fs = require("fs");
 const ErrorHandler = require("../utils/errorhandler");
@@ -90,9 +91,7 @@ exports.allProperties = catchAsyncErrors(async (req, res, next) => {
   let filteredProperties = properties;
 
   if (searchKeyword) {
-    filteredProperties = properties.filter((property) =>
-      property.title.toLowerCase().includes(searchKeyword.toLowerCase())
-    );
+    filteredProperties = propertyFilter(properties, searchKeyword);
   }
 
   const currentPageProperties = filteredProperties.slice(startIndex, endIndex);

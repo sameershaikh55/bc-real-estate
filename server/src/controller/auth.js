@@ -71,7 +71,7 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
 
 // Get all USERs
 exports.allUsers = catchAsyncErrors(async (req, res, next) => {
-  const users = await RegistrationModel.find();
+  const users = await RegistrationModel.find().sort({ createdAt: -1 });
   sendResponse(true, 200, "users", users, res);
 });
 

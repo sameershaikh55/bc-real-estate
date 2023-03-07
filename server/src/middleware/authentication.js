@@ -11,11 +11,7 @@ exports.authentication = catchAsyncErrors(async (req, res, next) => {
 
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-  console.log(decoded, "decoded");
-
   res.user = await RegistrationModel.findById(decoded.id);
-
-  console.log(res.user, "res.user");
 
   next();
 });

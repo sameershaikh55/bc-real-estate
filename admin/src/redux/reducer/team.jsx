@@ -38,7 +38,7 @@ export const team = (
         ...state,
         teamLoading: false,
         success: action.payload.success,
-        team: [...state.team, action.payload.data],
+        team: [action.payload.data, ...state.team],
       };
     case UPDATE_TEAM_SUCCESS:
       return {

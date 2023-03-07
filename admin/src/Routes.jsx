@@ -19,6 +19,7 @@ import Newsletter from "./pages/Newsletter";
 import PromoCode from "./pages/PromoCode";
 import BuyingInquiry from "./pages/BuyingInquiry";
 import AddProperty from "./pages/AddProperty";
+import SellingPropertyInquiry from "./pages/SellingInquiry";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -115,6 +116,14 @@ function App() {
             element={
               <Protected>
                 <BuyingInquiry />
+              </Protected>
+            }
+          />
+          <Route
+            path="/sell-inquiry"
+            element={
+              <Protected>
+                <SellingPropertyInquiry />
               </Protected>
             }
           />

@@ -2,20 +2,18 @@ import React, { useEffect } from "react";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import { useNavigate } from "react-router-dom";
 import {
-  deleteBuyingInquiry,
+  deleteSellingInquiry,
   clearErrors,
-} from "../redux/action/buyingInquiry";
-import { DELETE_BUYING_INQUIRY_RESET } from "../redux/type/buyingInquiry";
+} from "../redux/action/sellingInquiry";
+import { DELETE_SELLING_INQUIRY_RESET } from "../redux/type/sellingInquiry";
 
-const BuyingInquiryTable = () => {
+const SellingInquiryTable = ({ filteredContacts }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const navigate = useNavigate();
 
-  const { inquiries, error, inquiryDeleted } = useSelector(
-    (state) => state.buyingInquiry
+  const { error, inquiryDeleted } = useSelector(
+    (state) => state.sellingInquiry
   );
 
   useEffect(() => {
@@ -25,8 +23,8 @@ const BuyingInquiryTable = () => {
     }
 
     if (inquiryDeleted) {
-      alert.success("Inquiry deleted!");
-      dispatch({ type: DELETE_BUYING_INQUIRY_RESET });
+      alert.success("Request deleted!");
+      dispatch({ type: DELETE_SELLING_INQUIRY_RESET });
     }
   }, [dispatch, alert, inquiryDeleted, error]);
 
@@ -45,44 +43,21 @@ const BuyingInquiryTable = () => {
             </tr>
           </thead>
           <tbody>
-            {(inquiries.length &&
-              inquiries.map(
-                (
-                  {
-                    _id,
-                    name,
-                    email,
-                    property,
-                    requestType,
-                    message,
-                    phone,
-                    createdAt,
-                  },
-                  index
-                ) => {
+            {(filteredContacts.length &&
+              filteredContacts.map(
+                ({ _id, name, email, message, phone, createdAt }, index) => {
                   return (
                     <tr key={index}>
                       <td className="color3 pe-3 ps-4 fw400">{name}</td>
                       <td className="color3 px-3 fw400">{email}</td>
                       <td className="color3 px-3 fw400">{phone}</td>
-                      <td className="color3 px-3 fw400">
-                        Property:{" "}
-                        <span
-                          onClick={() => navigate(`/?search=${property}`)}
-                          className="text-primary pointer"
-                        >
-                          {property}
-                        </span>{" "}
-                        <br />
-                        Request Type: {requestType} <br />
-                        Message: {message}
-                      </td>
+                      <td className="color3 px-3 fw400">{message}</td>
                       <td className="color3 px-3 fw400">
                         {new Date(createdAt).toDateString()}
                       </td>
                       <td className="color3 text-end pe-4 fw400">
                         <RiDeleteBinFill
-                          onClick={() => dispatch(deleteBuyingInquiry(_id))}
+                          onClick={() => dispatch(deleteSellingInquiry(_id))}
                           className="ms-2 pointer"
                           fontSize="1.2rem"
                           color="#8961de"
@@ -105,4 +80,4 @@ const BuyingInquiryTable = () => {
   );
 };
 
-export default BuyingInquiryTable;
+export default SellingInquiryTable;
