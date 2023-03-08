@@ -7,10 +7,22 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Card = (agent) => {
-  const { image, name, bio, phone, email, social } = agent;
+  const {
+    memberImage,
+    name,
+    phone,
+    email,
+    longIntro,
+    facebook,
+    instagram,
+    twitter,
+    linkdin,
+  } = agent;
   const [hover, setHover] = useState(false);
+  const { team_url } = useSelector((state) => state.pictureUrl);
 
   return (
     <div className="detailed_agent_card_container">
@@ -21,26 +33,14 @@ const Card = (agent) => {
       >
         <div className="card-image-container">
           <img
-            src={image}
+            src={team_url + memberImage}
             alt={name}
             className={`card-image ${hover ? "card-image-hover" : ""}`}
           />
         </div>
         <div className="card-info-container">
           <h3 className="card-name fw700">{name}</h3>
-          <p className="card-bio">
-            {bio}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia,
-            incidunt sequi optio praesentium repellendus eos harum eius placeat
-            corrupti inventore iure eveniet sed ullam maiores delectus animi
-            aperiam sit nihil enim nemo rerum laudantium dolorum est! Minus
-            iusto praesentium dicta repudiandae. Fuga eaque et, nam doloremque
-            necessitatibus, iste illo architecto minima rerum aperiam natus enim
-            obcaecati mollitia modi facilis facere, dignissimos velit pariatur
-            aspernatur. Consequuntur ducimus consectetur eum possimus labore
-            atque unde accusamus natus. Fuga magnam et sed aperiam facere Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Odit, molestias.
-          </p>
+          <p className="card-bio">{longIntro}</p>
           <div className="card-details-container">
             <div className="card-detail">
               <FaPhone size={20} className="card-detail-icon" />
@@ -51,16 +51,16 @@ const Card = (agent) => {
               <p className="card-detail-text">{email}</p>
             </div>
             <div className="card-social-container">
-              <a href={social.facebook}>
+              <a href={facebook}>
                 <FaFacebook size={20} className="card-social-icon" />
               </a>
-              <a href={social.twitter}>
+              <a href={twitter}>
                 <FaTwitter size={20} className="card-social-icon" />
               </a>
-              <a href={social.instagram}>
+              <a href={instagram}>
                 <FaInstagram size={20} className="card-social-icon" />
               </a>
-              <a href={social.linkdin}>
+              <a href={linkdin}>
                 <FaLinkedin size={20} className="card-social-icon" />
               </a>
             </div>

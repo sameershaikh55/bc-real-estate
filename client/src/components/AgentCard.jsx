@@ -1,33 +1,41 @@
 import React from "react";
 import { CgFacebook } from "react-icons/cg";
 import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const AgentCard = ({
-  image,
+  memberImage,
   name,
   phone,
   email,
-  bio,
-  social: { facebook, instagram, twitter, linkdin },
+  shortIntro,
+  facebook,
+  instagram,
+  twitter,
+  linkdin,
 }) => {
+  const { team_url } = useSelector((state) => state.pictureUrl);
+
   return (
     <div className="agent_card">
       <div className="card-box-d">
         <div className="card-img-d">
-          <img src={image} alt="" className="img-d img-fluid" />
+          <img
+            src={team_url + memberImage}
+            alt=""
+            className="img-d img-fluid"
+          />
         </div>
         <div className="card-overlay card-overlay-hover">
           <div className="card-header-d">
             <div className="card-title-d align-self-center">
-              <h3 className="title-d">
-                <a href="" className="link-two">
-                  {name}
-                </a>
+              <h3 className="text-white text-decoration-underline title-d">
+                {name}
               </h3>
             </div>
           </div>
           <div className="card-body-d">
-            <p className="content-d color-text-a">{bio}</p>
+            <p className="content-d color-text-a">{shortIntro}</p>
             <div className="info-agents color-a">
               <p>
                 <strong>Phone: </strong> {phone}

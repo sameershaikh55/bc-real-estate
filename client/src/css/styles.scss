@@ -168,6 +168,38 @@ p {
   }
 }
 
+// LOADER START
+.loading_page {
+  position: fixed;
+  height: 100vh;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+  transition: 0.5s;
+
+  .inner_loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+  }
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+  }
+}
+// LOADER END
+
 .bg_color1 {
   background: $color1;
 }
@@ -1080,7 +1112,8 @@ p {
 
   .card-box-d .title-d {
     transition: 0.3s ease-in-out;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
     font-weight: 600;
     margin: 1rem 0;
     transform: translateY(-20px);

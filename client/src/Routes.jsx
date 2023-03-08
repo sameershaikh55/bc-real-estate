@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { loadUrls } from "./redux/action/pictureUrl";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // PAGES
@@ -10,8 +10,15 @@ import Home from "./pages/Home";
 import Properties from "./pages/Properties";
 import PropertyDetail from "./pages/PropertyDetail";
 import Newsletter from "./pages/Newsletter";
+import { useDispatch } from "react-redux";
 
 const AppRoutes = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUrls());
+  }, []);
+
   return (
     <Router>
       <Layout>
