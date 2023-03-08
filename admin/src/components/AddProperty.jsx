@@ -102,8 +102,6 @@ const AddProperty = () => {
   });
 
   const handleChange = (event) => {
-    console.log(event);
-
     const { name, value } = event.target;
 
     if (name === "propertyImages") {

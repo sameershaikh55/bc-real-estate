@@ -15,20 +15,23 @@ const upload = multer({
   },
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.resolve(__dirname, "../../../" + "public/images/team"));
+      cb(
+        null,
+        path.resolve(__dirname, "../../../" + "public/images/testimonials")
+      );
     },
     filename: (req, file, cb) => {
       if (req.params.id) {
-        req.body.memberImage =
+        req.body.personImage =
           req.params.id + `.${file.mimetype.split("/").pop()}`;
 
-        cb(null, req.body.memberImage);
+        cb(null, req.body.personImage);
       } else {
         req.body._id = new ObjectId();
-        req.body.memberImage =
+        req.body.personImage =
           req.body._id.toString() + `.${file.mimetype.split("/").pop()}`;
 
-        cb(null, req.body.memberImage);
+        cb(null, req.body.personImage);
       }
     },
     onerror: (err, next) => {

@@ -20,6 +20,8 @@ import PromoCode from "./pages/PromoCode";
 import BuyingInquiry from "./pages/BuyingInquiry";
 import AddProperty from "./pages/AddProperty";
 import SellingPropertyInquiry from "./pages/SellingInquiry";
+import ShortClips from "./pages/ShortClips";
+import Testimonial from "./pages/Testimonial";
 
 function App() {
   const [mode, setMode] = useState(1);
@@ -127,9 +129,26 @@ function App() {
               </Protected>
             }
           />
-          {["/property", "/property/:id"].map((url) => {
+          <Route
+            path="/video-shorts"
+            element={
+              <Protected>
+                <ShortClips />
+              </Protected>
+            }
+          />
+          <Route
+            path="/testimonials"
+            element={
+              <Protected>
+                <Testimonial />
+              </Protected>
+            }
+          />
+          {["/property", "/property/:id"].map((url, i) => {
             return (
               <Route
+                key={i}
                 path={url}
                 element={
                   <Protected>

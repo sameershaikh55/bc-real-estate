@@ -13,6 +13,8 @@ import { pictureUrl } from "./reducer/pictureUrl";
 import { buyingInquiry } from "./reducer/buyingInquiry";
 import { sellingInquiry } from "./reducer/sellingInquiry";
 import { property } from "./reducer/property";
+import { shortVideos } from "./reducer/shortClips";
+import { testimonial } from "./reducer/testimonial";
 
 const reducer = combineReducers({
   user: userReducer,
@@ -26,6 +28,8 @@ const reducer = combineReducers({
   buyingInquiry,
   sellingInquiry,
   property,
+  shortVideos,
+  testimonial,
 });
 
 let initialState = {};

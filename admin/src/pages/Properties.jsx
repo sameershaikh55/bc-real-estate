@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import cross from "../assets/cross.svg";
 import Layout from "../layout";
 import PropertiesTable from "../components/PropertiesTable";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,8 +68,20 @@ const Properties = () => {
           </div>
           <div className="d-flex gap-2">
             {searchQuery && (
-              <button className="ms-4 bg-purple-light border-0 px-3 py-1 rounded-3 color1 fw600">
-                {totalResults} results
+              <button className="ms-4 bg-purple-light border-0 ps-3 pe-2 py-1 rounded-3 color1 fw600 d-flex align-items-center">
+                {totalResults} results{" "}
+                <img
+                  style={{ height: "25px", width: "25px" }}
+                  src={cross}
+                  alt=""
+                  onClick={() =>
+                    handleSearch({
+                      target: {
+                        value: "",
+                      },
+                    })
+                  }
+                />
               </button>
             )}
             <div>
