@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProperties } from "../redux/action/property";
+import Loader from "../components/Loader";
 
 // COMPONENTS
 import Hero2 from "../components/Hero2";
@@ -11,6 +14,17 @@ const Properties = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const search = location.search.replace("?", "");
+
+  const dispatch = useDispatch();
+  const { properties, loading } = useSelector((state) => state.property);
+
+  useEffect(() => {
+    dispatch(getProperties());
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
@@ -98,13 +112,10 @@ const Properties = () => {
                 {search === "buy" && (
                   <div className="col-12">
                     <div className="row">
-                      {[
-                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                        1, 1, 1, 1,
-                      ].map((content, i) => {
+                      {properties.map((content, i) => {
                         return (
                           <div key={i} className="col-12 col-md-6 col-lg-4">
-                            <PropertyCard />
+                            <PropertyCard {...content} />
                           </div>
                         );
                       })}

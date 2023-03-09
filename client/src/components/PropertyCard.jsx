@@ -4,8 +4,11 @@ import { IoLocationSharp } from "react-icons/io5";
 import { BiBed, BiShapeSquare } from "react-icons/bi";
 import { TbBath } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const PropertyCard = () => {
+const PropertyCard = ({ propertyImages }) => {
+  const { properties_url } = useSelector((state) => state.pictureUrl);
+
   return (
     <Link to="/property-detail" className="text-decoration-none">
       <div className="property_card">
@@ -13,7 +16,17 @@ const PropertyCard = () => {
           <div className="hover15 column">
             <div>
               <figure>
-                <img className="w-100" src={img_1} alt="#" />
+                <img
+                  style={{
+                    minHeight: "240px",
+                    maxHeight: "240px",
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                  className="w-100"
+                  src={properties_url + propertyImages[0]}
+                  alt="#"
+                />
               </figure>
             </div>
           </div>
